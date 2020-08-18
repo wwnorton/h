@@ -144,7 +144,10 @@ class BulkAPIRoot(RootFactory):
     """Root factory for the Bulk API."""
 
     # Currently only LMS uses this end-point
-    __acl__ = [(Allow, "client_authority:lms.hypothes.is", "bulk_action")]
+    __acl__ = [
+        (Allow, "client_authority:lms.hypothes.is", "bulk_action"),
+        (Allow, "client_authority:wwnorton.com", "bulk_action")
+    ]
 
 
 class OrganizationRoot(RootFactory):
